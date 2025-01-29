@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persepolis - Home</title>
+    <style>
+        :root {
+            --primary-color: #4a4a4a; /* Dark gray for text */
+            --secondary-color: #8b0000; /* Dark red for accents */
+            --background-color: #f4f4f4; /* Light gray for background */
+            --font-family: 'Georgia', serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--primary-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 5%;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 0.5rem 0 0;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary-color);
+            padding: 0.5rem 5%;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/random/1920x1080?iran,history') center/cover;
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 3rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content h3 {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .content img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem 5%;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Persepolis</h1>
+        <p>By Marjane Satrapi</p>
+    </header>
+
+    <nav>
+        <a href="#about">About the Book</a>
+        <a href="#author">About the Author</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="login.html">Login</a>
+    </nav>
+
+    <section class="hero">
+        <h2>Discover the Story of a Revolution</h2>
+        <p>Persepolis is a powerful graphic memoir that explores themes of identity, culture, and resistance during the Iranian Revolution.</p>
+    </section>
+
+    <section class="content" id="about">
+        <h3>About the Book</h3>
+        <p><strong>Persepolis</strong> is a graphic novel by Marjane Satrapi that depicts her childhood and early adult years in Iran during and after the Islamic Revolution. The book provides a unique perspective on the impact of political and social upheaval on ordinary people.</p>
+        <img src="https://source.unsplash.com/random/800x600?graphic-novel" alt="Graphic Novel">
+    </section>
+
+    <section class="content" id="author">
+        <h3>About the Author</h3>
+        <p><strong>Marjane Satrapi</strong> is an Iranian-born French graphic novelist, cartoonist, illustrator, film director, and children's book author. Her work often explores themes of identity, culture, and the human experience.</p>
+        <img src="https://source.unsplash.com/random/800x600?author" alt="Marjane Satrapi">
+    </section>
+
+    <section class="content" id="gallery">
+        <h3>Gallery</h3>
+        <p>Explore images inspired by the themes and settings of <strong>Persepolis</strong>.</p>
+        <div>
+            <img src="https://source.unsplash.com/random/800x600?iran" alt="Iran">
+            <img src="https://source.unsplash.com/random/800x600?revolution" alt="Revolution">
+            <img src="https://source.unsplash.com/random/800x600?culture" alt="Culture">
+        </div>
+    </section>
+
+    <section class="content" id="reviews">
+        <h3>Reviews</h3>
+        <p>Here’s what readers are saying about <strong>Persepolis</strong>:</p>
+        <blockquote>
+            "A stunning graphic memoir that captures the complexities of growing up in a time of political turmoil."
+        </blockquote>
+        <blockquote>
+            "Satrapi's storytelling is both poignant and humorous, making this a must-read."
+        </blockquote>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Persepolis Fan Page. All rights reserved.</p>
+        <p><a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+    </footer>
+</body>
+</html>

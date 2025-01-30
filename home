@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persepolis - Home</title>
+    <style>
+        :root {
+            --primary-color: #4a4a4a;
+            --secondary-color: #8c0000; 
+            --background-color: #f4f4f4;
+            --font-family: 'Georgia', serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0; 
+            background-color: var(--background-color);
+            font-family: var(--font-family);
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.pinimg.com/736x/17/87/04/1787048ef081c47056f12ac1d54ad2b5.jpg') center/cover;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Persepolis</h1>
+        <p>Graphic Novel by Marjane Satrapi</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="context.html">Historical Context</a>
+    </nav>
+
+    <!-- Home Page (Hero Section) -->
+    <section class="hero">
+        <div>
+            <h2>Welcome to Persepolis</h2>
+            <p>Explore the powerful story of Marjane Satrapi's journey through revolution, identity, and culture.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Persepolis Fan Page. All rights reserved.</p>
+    </footer>
+</body>
+</html>

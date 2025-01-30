@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persepolis - Gallery</title>
+    <style>
+        :root {
+            --primary-color: #4a4a4a;
+            --secondary-color: #8c0000; 
+            --background-color: #f4f4f4;
+            --font-family: 'Georgia', serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0; 
+            background-color: var(--background-color);
+            font-family: var(--font-family);
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+            margin-top: 20px;
+        }
+
+        .persepolis-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .persepolis-image:hover {
+            transform: scale(1.02);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Persepolis</h1>
+        <p>Graphic Novel by Marjane Satrapi</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="context.html">Historical Context</a>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section>
+        <div class="image-grid">
+            <!-- Cover Art -->
+            <img class="persepolis-image" src="https://i.pinimg.com/736x/17/87/04/1787048ef081c47056f12ac1d54ad2b5.jpg" alt="Persepolis Cover Art">
+            
+            <!-- Graphic Novel Panels -->
+            <img class="persepolis-image" src="https://i.pinimg.com/736x/e3/fd/bb/e3fdbbcf50988a5249002f5fec2719b8.jpg" alt="Graphic Novel Panel">
+            <img class="persepolis-image" src="https://i.pinimg.com/736x/78/67/d1/7867d136995acdbd8eb4aa4a07ffb610.jpg" alt="Marjane's Journey">
+            
+            <!-- Cultural Themes -->
+            <img class="persepolis-image" src="https://i.pinimg.com/736x/35/49/ac/3549ac73138acb338c78d07aab269af1.jpg" alt="Cultural Identity">
+            <img class="persepolis-image" src="https://images.penguinrandomhouse.com/cover/9780375714573" alt="Themes of Resistance">
+            
+            <!-- Additional Images -->
+            <img class="persepolis-image" src="https://thecomicbookteacher.com/wp-content/uploads/2014/09/persepolis-cover.jpg" alt="Marjane Satrapi Art Style">
+            <img class="persepolis-image" src="https://jmuyskens.github.io/images/persepolis-poster.jpg" alt="Persepolis Artwork">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Persepolis Fan Page. All rights reserved.</p>
+    </footer>
+</body>
+</html>

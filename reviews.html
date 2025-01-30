@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persepolis - Reviews</title>
+    <style>
+        :root {
+            --primary-color: #4a4a4a;
+            --secondary-color: #8c0000; 
+            --background-color: #f4f4f4;
+            --font-family: 'Georgia', serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0; 
+            background-color: var(--background-color);
+            font-family: var(--font-family);
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 1.1rem;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .content {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .review-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .review-form h2 {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .review-form input,
+        .review-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: var(--font-family);
+        }
+
+        .review-form button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .review-form button:hover {
+            opacity: 0.9;
+        }
+
+        .reviews-list {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-card {
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 1rem;
+        }
+
+        .review-card:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .review-author {
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-text {
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Persepolis</h1>
+        <p>Graphic Novel by Marjane Satrapi</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="context.html">Historical Context</a>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Review Form -->
+        <section class="review-form">
+            <h2>Share Your Review</h2>
+            <form id="reviewForm">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <textarea id="review" rows="5" placeholder="Your Review..." required></textarea>
+                <button type="submit">Submit Review</button>
+            </form>
+        </section>
+
+        <!-- Reviews Display -->
+        <section class="reviews-list">
+            <h2>Reader Reviews</h2>
+            <div id="reviewsContainer">
+                <!-- Reviews will be dynamically added here -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Persepolis Fan Page. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('reviewForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const reviewText = document.getElementById('review').value;
+            
+            if (name && reviewText) {
+                // Create new review element
+                const reviewDiv = document.createElement('div');
+                reviewDiv.className = 'review-card';
+                reviewDiv.innerHTML = `
+                    <div class="review-author">${name}</div>
+                    <div class="review-text">${reviewText}</div>
+                `;
+
+                // Add to top of reviews list
+                const container = document.getElementById('reviewsContainer');
+                container.insertBefore(reviewDiv, container.firstChild);
+
+                // Clear form
+                document.getElementById('reviewForm').reset();
+            }
+        });
+    </script>
+</body>
+</html>

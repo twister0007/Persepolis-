@@ -101,16 +101,20 @@
             padding: 1.5rem;
             border-bottom: 1px solid #eee;
             margin-bottom: 1rem;
-        }
-
-        .review-card:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .review-author {
             color: var(--secondary-color);
             font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-date {
+            color: var(--primary-color);
+            font-size: 0.9rem;
             margin-bottom: 0.5rem;
         }
 
@@ -160,7 +164,7 @@
         <section class="reviews-list">
             <h2>Reader Reviews</h2>
             <div id="reviewsContainer">
-                <!-- Reviews will be dynamically added here -->
+                <!-- Reviews will be loaded here -->
             </div>
         </section>
     </div>
@@ -171,6 +175,17 @@
     </footer>
 
     <script>
+        // Load existing reviews when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedReviews = localStorage.getItem('persepolisReviews');
+            if (savedReviews) {
+                JSON.parse(savedReviews).forEach(review => {
+                    addReviewToPage(review);
+                });
+            }
+        });
+
+        // Handle form submission
         document.getElementById('reviewForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -178,22 +193,39 @@
             const reviewText = document.getElementById('review').value;
             
             if (name && reviewText) {
-                // Create new review element
-                const reviewDiv = document.createElement('div');
-                reviewDiv.className = 'review-card';
-                reviewDiv.innerHTML = `
-                    <div class="review-author">${name}</div>
-                    <div class="review-text">${reviewText}</div>
-                `;
+                const review = {
+                    name: name,
+                    text: reviewText,
+                    date: new Date().toISOString()
+                };
 
-                // Add to top of reviews list
-                const container = document.getElementById('reviewsContainer');
-                container.insertBefore(reviewDiv, container.firstChild);
-
+                // Save to localStorage
+                saveReview(review);
+                
+                // Add to page
+                addReviewToPage(review);
+                
                 // Clear form
-                document.getElementById('reviewForm').reset();
+                this.reset();
             }
         });
+
+        function saveReview(review) {
+            const reviews = JSON.parse(localStorage.getItem('persepolisReviews') || '[]');
+            reviews.push(review);
+            localStorage.setItem('persepolisReviews', JSON.stringify(reviews));
+        }
+
+        function addReviewToPage(review) {
+            const reviewDiv = document.createElement('div');
+            reviewDiv.className = 'review-card';
+            reviewDiv.innerHTML = `
+                <div class="review-author">${review.name}</div>
+                <div class="review-date">${new Date(review.date).toLocaleDateString()}</div>
+                <div class="review-text">${review.text}</div>
+            `;
+            document.getElementById('reviewsContainer').prepend(reviewDiv);
+        }
     </script>
 </body>
 </html>
